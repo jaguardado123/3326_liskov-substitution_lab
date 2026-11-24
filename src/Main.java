@@ -1,9 +1,9 @@
-import shipping.*;
+import finance.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        // Should only start your program.
-
+        
+        FinanceApp myApp = new FinanceApp();
     }
 }

@@ -1,19 +1,16 @@
-# Open-Closed Lab
+# Liskov-Substitution Lab
 
-### Package-Shipping App 
+### Finance App 
 
-Create a Package-Shipping app to determine the cost of shipping a package based on it's weight and the type of shipment: Standard, Express, Drone.
+A Finance App has been created for you. This finance app display the information of two financial institutions, Bank of America and Rally Credit Union. However, the app is structured in a way that violates the Liskov Substitution principle.
 
-- Standard Shipment: *weight* x $2
-- Express Shipment: *weight* x $3.50
-- Drone Shipment: *weight* x $5
+**Violation:**
+
+The `CreditUnion` class is inheriting the `FinanceInstitute` class since it needs most of its methods and subsequently inherits the method `stakeholders()`. This presents a problem because **Credit Unions don't have stakeholders**, thus `CreditUnion` needs to *override* `stakeholders()` to throw an exception that signals developers that this method shouldn't be called from any `CreditUnion` object. This violates **Liskov-Substitution** because it breaks the expected behavior of `FinanceInstitute`.
 
 **Your task:**
 
-1. Welcome the user to the App.
-2. Display a menu to the user: a) Standard, b) Express, c) Drone
-3. Ask the user to input their choice.
-4. Ask the user to input the weight of the package.
-5. Display the total cost of the shipment.
+- Refactor the code so that the Liskov-Substitution isn't violated. This means `CreditUnion` shouldn't inherit `stakeholders()`.
+- Remember, `CreditUnion` should still inherit `FinanceInstitute` since it needs majority of its methods.
 
-Build this app using the **Single-Responsibility** and **Open-Closed** Principles.
+Make sure your solution still adheres to the **Single-Responsibility** and **Open-Closed** principles. 
